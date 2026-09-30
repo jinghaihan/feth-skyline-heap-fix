@@ -82,19 +82,6 @@ dependencies are needed. See [Development](docs/development.md) for testing
 and the scripted release flow, and [Findings](docs/findings.md) for the
 binary evidence and verification limits.
 
-## Credits
-
-- [Skyline](https://github.com/skyline-dev/skyline): plugin loading and
-  allocation behavior used to investigate the failure.
-- [Aldebaran](https://github.com/three-houses-research-team/aldebaran-rs):
-  game-specific Skyline tooling used in the verified setup.
-
-No game executable, ROM, save, private log, or third-party source code is
-included. Fire Emblem and related names belong to Nintendo and Intelligent
-Systems. This unofficial project is not affiliated with or endorsed by them.
-
 ## License
 
-[MIT](./LICENSE) License © [jinghaihan](https://github.com/jinghaihan).
-This license covers this project's code and documentation, not the game,
-Skyline, Aldebaran, or any other third-party material.
+[MIT](./LICENSE) License © [jinghaihan](https://github.com/jinghaihan)

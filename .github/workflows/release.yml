@@ -1,0 +1,66 @@
+name: release
+
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.10'
+      - name: Verify tag version
+        run: |
+          project_version="$(tr -d '[:space:]' < VERSION)"
+          test "${GITHUB_REF_NAME}" = "v${project_version}"
+      - name: Run tests
+        run: python3 -m unittest discover -s tests -v
+      - name: Build and verify packages
+        run: python3 tools/build.py
+      - uses: actions/upload-artifact@v7
+        with:
+          name: heap-fix-release
+          path: dist/*
+          if-no-files-found: error
+
+  release:
+    needs: build
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.10'
+      - uses: actions/setup-node@v7
+        with:
+          node-version: lts/*
+      - uses: actions/download-artifact@v8
+        with:
+          name: heap-fix-release
+          path: dist
+      - name: Verify assets before publishing
+        run: python3 tools/build.py --verify-directory dist
+      - name: Generate release notes
+        run: npx changelogithub
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Upload release assets
+        run: gh release upload "${GITHUB_REF_NAME}" dist/* --clobber
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Download and verify published assets
+        run: |
+          gh release download "${GITHUB_REF_NAME}" --dir release-download
+          python3 tools/build.py --verify-directory release-download
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

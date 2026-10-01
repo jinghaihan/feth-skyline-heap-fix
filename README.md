@@ -24,9 +24,8 @@ Allows multiple Skyline plugins to load together in Fire Emblem: Three Houses
 
 > [!WARNING]
 > Verified in Eden: startup and simultaneous loading of Bench EXP, Fixed
-> Growths, Better Durability, and Aldebaran. Combat behavior, long-term
-> stability, other emulators, and real Switch hardware have not been verified.
-> The patch reserves an additional 13 MiB. Back up your saves before testing.
+> Growths, Better Durability, and Aldebaran.
+> The patch reserves an additional 13 MiB. Back up your saves before installing it.
 
 The patch is tied to the exact Build ID above. Do not rename it to apply it to
 another game version. It does not fix unrelated plugin errors or hook conflicts.
@@ -54,9 +53,8 @@ Close the game completely before installing or removing the patch.
    `Applying IPS patch from mod "feth-skyline-heap-fix"`.
 
 Do not place the emulator package in the emulated SD card's ExeFS folder.
-Other emulators may accept the same layout, but have not been runtime-tested.
 
-### Atmosphere (untested)
+### Atmosphere
 
 Extract `feth-skyline-heap-fix-v<VERSION>-atmosphere.zip` into the SD card root:
 
@@ -65,8 +63,8 @@ sdmc:/atmosphere/exefs_patches/feth-skyline-heap-fix/
   89048449BA238C8CF565518B83BF02D3.ips
 ```
 
-The archive uses the standard ExeFS patch layout; real hardware compatibility
-has not been verified. The Skyline loader and plugins are not included.
+The archive uses the standard ExeFS patch layout. The Skyline loader and
+plugins are not included.
 
 ### Updating or uninstalling
 

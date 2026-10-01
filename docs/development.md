@@ -12,11 +12,11 @@ python3 tools/build.py
 python3 tools/build.py --verify-directory dist
 ```
 
-The build writes the reviewed 23-byte IPS32 patch, separate emulator and
-Atmosphere installation ZIPs, and `SHA256SUMS` to `dist/`. Archive timestamps,
+The build writes the reviewed 23-byte IPS32 patch, separate Atmosphere and
+emulator installation ZIPs, and `SHA256SUMS` to `dist/`. Archive timestamps,
 permissions, entry order, and storage mode are fixed for reproducible output.
-The emulator package contains one `feth-skyline-heap-fix/exefs/` entry. The
-Atmosphere package contains one `atmosphere/exefs_patches/` entry. Nothing
+The Atmosphere package contains one `atmosphere/exefs_patches/` entry. The
+emulator package contains one `feth-skyline-heap-fix/exefs/` entry. Nothing
 else is packaged.
 
 To compare with an existing verified IPS before building:

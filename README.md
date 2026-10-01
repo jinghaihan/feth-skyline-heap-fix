@@ -37,7 +37,19 @@ Download a package from
 [Releases](https://github.com/jinghaihan/feth-skyline-heap-fix/releases/latest).
 Close the game completely before installing or removing the patch.
 
-### Eden
+### Nintendo Switch (Atmosphere)
+
+Extract `feth-skyline-heap-fix-v<VERSION>-atmosphere.zip` into the SD card root:
+
+```text
+sdmc:/atmosphere/exefs_patches/feth-skyline-heap-fix/
+  89048449BA238C8CF565518B83BF02D3.ips
+```
+
+The archive uses the standard ExeFS patch layout. The Skyline loader and
+plugins are not included.
+
+### Emulators (Eden)
 
 1. Download `feth-skyline-heap-fix-v<VERSION>-emulator.zip`.
 2. Right-click the game and open its mod directory.
@@ -54,18 +66,6 @@ Close the game completely before installing or removing the patch.
    `Applying IPS patch from mod "feth-skyline-heap-fix"`.
 
 Do not place the emulator package in the emulated SD card's ExeFS folder.
-
-### Atmosphere
-
-Extract `feth-skyline-heap-fix-v<VERSION>-atmosphere.zip` into the SD card root:
-
-```text
-sdmc:/atmosphere/exefs_patches/feth-skyline-heap-fix/
-  89048449BA238C8CF565518B83BF02D3.ips
-```
-
-The archive uses the standard ExeFS patch layout. The Skyline loader and
-plugins are not included.
 
 ### Updating or uninstalling
 

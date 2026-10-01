@@ -22,15 +22,16 @@ Allows multiple Skyline plugins to load together in Fire Emblem: Three Houses
 - Requires an existing game-specific Skyline installation, such as
   [Aldebaran](https://github.com/three-houses-research-team/aldebaran-rs).
 
-> [!WARNING]
-> Verified in Eden: startup and simultaneous loading of Bench EXP, Fixed
-> Growths, Better Durability, and Aldebaran.
-> The patch reserves an additional 13 MiB. Back up your saves before installing it.
+Verified in Eden: startup and simultaneous loading of Bench EXP, Fixed
+Growths, Better Durability, and Aldebaran. The patch reserves an additional
+13 MiB.
 
 The patch is tied to the exact Build ID above. Do not rename it to apply it to
 another game version. It does not fix unrelated plugin errors or hook conflicts.
 
 ## Install
+
+Back up your saves before installing the patch.
 
 Download a package from
 [Releases](https://github.com/jinghaihan/feth-skyline-heap-fix/releases/latest).

@@ -8,8 +8,8 @@ Python's standard library. No game files are needed or distributed.
 
 ```sh
 python3 -m unittest discover -s tests -v
-python3 tools/build.py
-python3 tools/build.py --verify-directory dist
+python3 scripts/build.py
+python3 scripts/build.py --verify-directory dist
 ```
 
 The build writes the reviewed 23-byte IPS32 patch, separate Atmosphere and
@@ -22,7 +22,7 @@ else is packaged.
 To compare with an existing verified IPS before building:
 
 ```sh
-python3 tools/build.py --reference-patch /path/to/verified.ips
+python3 scripts/build.py --reference-patch /path/to/verified.ips
 ```
 
 The reference must match byte-for-byte. It is read, never modified. Tests
@@ -36,13 +36,13 @@ Commit and push changes before releasing from a clean `main` synchronized
 with `origin/main`. For the first release:
 
 ```sh
-python3 tools/release.py --current
+python3 scripts/release.py --current
 ```
 
 For subsequent releases:
 
 ```sh
-python3 tools/release.py --bump patch
+python3 scripts/release.py --bump patch
 ```
 
 The script runs tests and builds packages, then creates the

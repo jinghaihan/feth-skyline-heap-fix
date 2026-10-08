@@ -58,7 +58,7 @@ def ensure_new_tag(tag: str) -> None:
 def verify_build() -> None:
   run(sys.executable, "-m", "unittest", "discover", "-s", "tests", "-v")
   with tempfile.TemporaryDirectory(prefix="feth-heap-release-") as temporary:
-    run(sys.executable, "tools/build.py", "--output", temporary)
+    run(sys.executable, "scripts/build.py", "--output", temporary)
 
 
 def main() -> None:

@@ -9,10 +9,10 @@
 - Keep documentation honest: Eden startup and simultaneous plugin loading were
   verified; hardware, other emulators, combat, and long-term stability were not.
 - Use Python's standard library and two-space indentation.
-- Run `python3 -m unittest discover -s tests -v` and `python3 tools/build.py`
+- Run `python3 -m unittest discover -s tests -v` and `python3 scripts/build.py`
   before committing. Verify the generated IPS against the known reference hash.
 - Use Conventional Commits and push completed changes to `origin/main`.
-- `VERSION` is the only release version source. Use `python3 tools/release.py`
+- `VERSION` is the only release version source. Use `python3 scripts/release.py`
   to create the `chore: release vX.Y.Z` commit, annotated tag, and explicit pushes.
   Do not publish releases or upload assets manually.
 - Tag pushes trigger CI, which builds packages, runs changelogithub, uploads

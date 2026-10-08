@@ -23,9 +23,9 @@ jobs:
       - name: Run tests
         run: python -m unittest discover -s tests -v
       - name: Build packages
-        run: python tools/build.py
+        run: python scripts/build.py
       - name: Verify packages
-        run: python tools/build.py --verify-directory dist
+        run: python scripts/build.py --verify-directory dist
       - uses: actions/upload-artifact@v7
         if: runner.os == 'Linux'
         with:
